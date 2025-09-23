@@ -1,0 +1,26 @@
+{
+  "name": "legal-ally",
+  "version": "1.0.0",
+  "description": "Premium Legal Document Automation Platform",
+  "main": "index.html",
+  "scripts": {
+    "dev": "vite",
+    "build": "vite build",
+    "preview": "vite preview",
+    "serve": "vite preview --port 3000"
+  },
+  "keywords": [
+    "legal",
+    "documents",
+    "automation",
+    "contracts",
+    "agreements",
+    "legal-tech"
+  ],
+  "author": "Legal Ally Team",
+  "license": "MIT",
+  "devDependencies": {
+    "vite": "^5.0.0"
+  },
+  "dependencies": {}
+}

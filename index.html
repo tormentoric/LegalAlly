@@ -1,0 +1,339 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Legal Ally - Professional Legal Documents in Minutes</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="styles/main.css">
+    <link rel="stylesheet" href="styles/components.css">
+    <link rel="stylesheet" href="styles/animations.css">
+</head>
+<body>
+    <!-- Navigation -->
+    <nav class="navbar">
+        <div class="nav-container">
+            <div class="nav-brand">
+                <div class="logo">
+                    <svg width="32" height="32" viewBox="0 0 32 32" fill="none">
+                        <path d="M16 2L28 8V24L16 30L4 24V8L16 2Z" stroke="#00f0ff" stroke-width="2" fill="none"/>
+                        <path d="M12 14H20M12 18H20" stroke="#00f0ff" stroke-width="2"/>
+                    </svg>
+                </div>
+                <span class="brand-text">LEGAL ALLY</span>
+            </div>
+            <div class="nav-menu">
+                <a href="#features" class="nav-link">Features</a>
+                <a href="#documents" class="nav-link">Documents</a>
+                <a href="#pricing" class="nav-link">Pricing</a>
+                <button class="btn btn-outline" id="loginBtn">Login</button>
+                <button class="btn btn-primary" id="signupBtn">Get Started</button>
+            </div>
+            <div class="mobile-menu-toggle" id="mobileMenuToggle">
+                <span></span>
+                <span></span>
+                <span></span>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section class="hero">
+        <div class="hero-container">
+            <div class="hero-content">
+                <h1 class="hero-title">
+                    <span class="title-main">LEGAL ALLY</span>
+                    <span class="title-sub">Professional Legal Documents in Minutes, Not Days</span>
+                </h1>
+                <p class="hero-description">
+                    Save 80% on legal fees with lawyer-approved templates. Generate professional legal documents with our AI-powered platform trusted by thousands of businesses and individuals.
+                </p>
+                <div class="hero-actions">
+                    <button class="btn btn-primary btn-large" id="createDocumentBtn">
+                        <span>Create Document</span>
+                        <svg width="20" height="20" viewBox="0 0 20 20" fill="currentColor">
+                            <path d="M10 3L17 10L10 17M17 10H3"/>
+                        </svg>
+                    </button>
+                    <button class="btn btn-outline btn-large" id="watchDemoBtn">
+                        <svg width="20" height="20" viewBox="0 0 20 20" fill="currentColor">
+                            <path d="M8 5L15 10L8 15V5Z"/>
+                        </svg>
+                        <span>Watch Demo</span>
+                    </button>
+                </div>
+                <div class="hero-stats">
+                    <div class="stat">
+                        <span class="stat-number">50,000+</span>
+                        <span class="stat-label">Documents Generated</span>
+                    </div>
+                    <div class="stat">
+                        <span class="stat-number">99.9%</span>
+                        <span class="stat-label">Uptime</span>
+                    </div>
+                    <div class="stat">
+                        <span class="stat-number">24/7</span>
+                        <span class="stat-label">Support</span>
+                    </div>
+                </div>
+            </div>
+            <div class="hero-visual">
+                <div class="document-preview">
+                    <div class="document-header">
+                        <div class="document-title">Legal Document</div>
+                        <div class="document-status">✓ Lawyer Approved</div>
+                    </div>
+                    <div class="document-content">
+                        <div class="document-line"></div>
+                        <div class="document-line short"></div>
+                        <div class="document-line"></div>
+                        <div class="document-line medium"></div>
+                        <div class="document-line"></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Document Categories -->
+    <section class="documents-section" id="documents">
+        <div class="container">
+            <div class="section-header">
+                <h2 class="section-title">Choose Your Document Type</h2>
+                <p class="section-description">Professional templates for every legal need</p>
+            </div>
+            <div class="document-grid" id="documentGrid">
+                <!-- Document cards will be populated by JavaScript -->
+            </div>
+        </div>
+    </section>
+
+    <!-- Features Section -->
+    <section class="features-section" id="features">
+        <div class="container">
+            <div class="section-header">
+                <h2 class="section-title">Why Choose Legal Ally?</h2>
+                <p class="section-description">Professional-grade features for all your legal document needs</p>
+            </div>
+            <div class="features-grid">
+                <div class="feature-card">
+                    <div class="feature-icon">
+                        <svg width="48" height="48" viewBox="0 0 48 48" fill="none">
+                            <path d="M24 4L44 14V34L24 44L4 34V14L24 4Z" stroke="#7b68ee" stroke-width="2" fill="none"/>
+                            <path d="M18 22L22 26L30 18" stroke="#7b68ee" stroke-width="2"/>
+                        </svg>
+                    </div>
+                    <h3 class="feature-title">Lawyer-Approved Templates</h3>
+                    <p class="feature-description">All documents vetted by licensed attorneys and updated for current legal requirements.</p>
+                </div>
+                <div class="feature-card">
+                    <div class="feature-icon">
+                        <svg width="48" height="48" viewBox="0 0 48 48" fill="none">
+                            <path d="M24 8L24 40M8 24L40 24" stroke="#7b68ee" stroke-width="2"/>
+                            <circle cx="24" cy="24" r="16" stroke="#7b68ee" stroke-width="2" fill="none"/>
+                        </svg>
+                    </div>
+                    <h3 class="feature-title">Bank-Level Security</h3>
+                    <p class="feature-description">Military-grade encryption protects your sensitive legal information at all times.</p>
+                </div>
+                <div class="feature-card">
+                    <div class="feature-icon">
+                        <svg width="48" height="48" viewBox="0 0 48 48" fill="none">
+                            <path d="M24 12V24L32 32" stroke="#7b68ee" stroke-width="2"/>
+                            <circle cx="24" cy="24" r="16" stroke="#7b68ee" stroke-width="2" fill="none"/>
+                        </svg>
+                    </div>
+                    <h3 class="feature-title">24/7 Access</h3>
+                    <p class="feature-description">Cloud-based platform ensures your documents are always accessible when you need them.</p>
+                </div>
+                <div class="feature-card">
+                    <div class="feature-icon">
+                        <svg width="48" height="48" viewBox="0 0 48 48" fill="none">
+                            <path d="M12 20L24 8L36 20M12 28L24 16L36 28" stroke="#7b68ee" stroke-width="2"/>
+                        </svg>
+                    </div>
+                    <h3 class="feature-title">AI-Powered Assistance</h3>
+                    <p class="feature-description">Smart suggestions and compliance checking to ensure your documents are perfect.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Trust Section -->
+    <section class="trust-section">
+        <div class="container">
+            <div class="trust-content">
+                <h2 class="trust-title">Trusted by Legal Professionals</h2>
+                <div class="trust-badges">
+                    <div class="trust-badge">
+                        <div class="badge-icon">🔒</div>
+                        <div class="badge-text">SOC 2 Certified</div>
+                    </div>
+                    <div class="trust-badge">
+                        <div class="badge-icon">⚖️</div>
+                        <div class="badge-text">ABA Approved</div>
+                    </div>
+                    <div class="trust-badge">
+                        <div class="badge-icon">🛡️</div>
+                        <div class="badge-text">GDPR Compliant</div>
+                    </div>
+                    <div class="trust-badge">
+                        <div class="badge-icon">✓</div>
+                        <div class="badge-text">ISO 27001</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Document Creation Modal -->
+    <div class="modal" id="documentModal">
+        <div class="modal-overlay" id="modalOverlay"></div>
+        <div class="modal-content">
+            <div class="modal-header">
+                <h3 class="modal-title">Create Legal Document</h3>
+                <button class="modal-close" id="modalClose">
+                    <svg width="24" height="24" viewBox="0 0 24 24" fill="currentColor">
+                        <path d="M18 6L6 18M6 6L18 18"/>
+                    </svg>
+                </button>
+            </div>
+            <div class="modal-body">
+                <div class="document-wizard" id="documentWizard">
+                    <!-- Step 1: Document Selection -->
+                    <div class="wizard-step active" data-step="1">
+                        <h4 class="step-title">Select Document Type</h4>
+                        <div class="document-search">
+                            <input type="text" placeholder="Search document types..." class="search-input" id="documentSearch">
+                        </div>
+                        <div class="document-categories" id="documentCategories">
+                            <!-- Categories will be populated by JavaScript -->
+                        </div>
+                    </div>
+
+                    <!-- Step 2: Document Form -->
+                    <div class="wizard-step" data-step="2">
+                        <h4 class="step-title">Document Details</h4>
+                        <div class="progress-bar">
+                            <div class="progress-fill" id="progressFill"></div>
+                        </div>
+                        <form class="document-form" id="documentForm">
+                            <!-- Form fields will be populated by JavaScript -->
+                        </form>
+                    </div>
+
+                    <!-- Step 3: Customization -->
+                    <div class="wizard-step" data-step="3">
+                        <h4 class="step-title">Customize Your Document</h4>
+                        <div class="customization-options" id="customizationOptions">
+                            <!-- Options will be populated by JavaScript -->
+                        </div>
+                    </div>
+
+                    <!-- Step 4: Review & Generate -->
+                    <div class="wizard-step" data-step="4">
+                        <h4 class="step-title">Review & Generate</h4>
+                        <div class="document-preview-container">
+                            <div class="preview-document" id="previewDocument">
+                                <!-- Preview will be populated by JavaScript -->
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="wizard-navigation">
+                    <button class="btn btn-outline" id="prevStep" style="display: none;">Previous</button>
+                    <button class="btn btn-primary" id="nextStep">Next</button>
+                    <button class="btn btn-success" id="generateDocument" style="display: none;">Generate Document</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Loading Overlay -->
+    <div class="loading-overlay" id="loadingOverlay">
+        <div class="loading-spinner">
+            <div class="spinner"></div>
+            <p class="loading-text">Generating your legal document...</p>
+        </div>
+    </div>
+
+    <!-- Success Modal -->
+    <div class="modal" id="successModal">
+        <div class="modal-overlay"></div>
+        <div class="modal-content success-modal">
+            <div class="success-icon">
+                <svg width="64" height="64" viewBox="0 0 64 64" fill="none">
+                    <circle cx="32" cy="32" r="28" stroke="#00f0ff" stroke-width="4" fill="none"/>
+                    <path d="M20 32L28 40L44 24" stroke="#00f0ff" stroke-width="4"/>
+                </svg>
+            </div>
+            <h3 class="success-title">Document Generated Successfully!</h3>
+            <p class="success-description">Your legal document has been created and is ready for download.</p>
+            <div class="success-actions">
+                <button class="btn btn-primary" id="downloadDocument">Download PDF</button>
+                <button class="btn btn-outline" id="downloadWord">Download Word</button>
+            </div>
+        </div>
+    </div>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-section">
+                    <div class="footer-brand">
+                        <div class="logo">
+                            <svg width="32" height="32" viewBox="0 0 32 32" fill="none">
+                                <path d="M16 2L28 8V24L16 30L4 24V8L16 2Z" stroke="#00f0ff" stroke-width="2" fill="none"/>
+                                <path d="M12 14H20M12 18H20" stroke="#00f0ff" stroke-width="2"/>
+                            </svg>
+                        </div>
+                        <span class="brand-text">LEGAL ALLY</span>
+                    </div>
+                    <p class="footer-description">Professional legal documents made simple and secure.</p>
+                </div>
+                <div class="footer-section">
+                    <h4 class="footer-title">Documents</h4>
+                    <ul class="footer-links">
+                        <li><a href="#">Business Contracts</a></li>
+                        <li><a href="#">Rental Agreements</a></li>
+                        <li><a href="#">Wills & Trusts</a></li>
+                        <li><a href="#">LLC Formation</a></li>
+                    </ul>
+                </div>
+                <div class="footer-section">
+                    <h4 class="footer-title">Support</h4>
+                    <ul class="footer-links">
+                        <li><a href="#">Help Center</a></li>
+                        <li><a href="#">Contact Us</a></li>
+                        <li><a href="#">Legal Advice</a></li>
+                        <li><a href="#">Status</a></li>
+                    </ul>
+                </div>
+                <div class="footer-section">
+                    <h4 class="footer-title">Legal</h4>
+                    <ul class="footer-links">
+                        <li><a href="#">Privacy Policy</a></li>
+                        <li><a href="#">Terms of Service</a></li>
+                        <li><a href="#">Disclaimer</a></li>
+                        <li><a href="#">Security</a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p class="footer-disclaimer">
+                    <strong>Legal Disclaimer:</strong> Legal Ally provides legal document templates and is not a substitute for legal advice. 
+                    Consult with a qualified attorney for complex legal matters.
+                </p>
+                <p class="footer-copyright">© 2024 Legal Ally. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="js/main.js"></script>
+    <script src="js/document-generator.js"></script>
+    <script src="js/wizard.js"></script>
+</body>
+</html>
