@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Legal Ally - Professional Legal Documents in Minutes</title>
+    <title>LegalAlly - Professional Legal Documents</title>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
@@ -26,8 +26,9 @@
             </div>
             <div class="nav-menu">
                 <a href="#features" class="nav-link">Features</a>
-                <a href="#documents" class="nav-link">Documents</a>
-                <a href="#pricing" class="nav-link">Pricing</a>
+                <a href="documents.html" class="nav-link">Documents</a>
+                <a href="#sources" class="nav-link">Template Sources</a>
+                <a href="#about" class="nav-link">About</a>
                 <button class="btn btn-outline" id="loginBtn">Login</button>
                 <button class="btn btn-primary" id="signupBtn">Get Started</button>
             </div>
@@ -97,15 +98,44 @@
         </div>
     </section>
 
-    <!-- Document Categories -->
-    <section class="documents-section" id="documents">
+    <!-- Template Sources Section -->
+    <section class="sources-section" id="sources">
         <div class="container">
             <div class="section-header">
-                <h2 class="section-title">Choose Your Document Type</h2>
-                <p class="section-description">Professional templates for every legal need</p>
+                <h2 class="section-title">Trusted Template Sources</h2>
+                <p class="section-description">Our templates are researched from credible legal organizations and professional sources</p>
             </div>
-            <div class="document-grid" id="documentGrid">
-                <!-- Document cards will be populated by JavaScript -->
+            <div class="sources-grid">
+                <div class="source-card">
+                    <div class="source-icon">
+                        <svg width="48" height="48" viewBox="0 0 48 48" fill="none">
+                            <path d="M24 4L44 14V34L24 44L4 34V14L24 4Z" stroke="#7b68ee" stroke-width="2" fill="none"/>
+                            <path d="M18 22L22 26L30 18" stroke="#7b68ee" stroke-width="2"/>
+                        </svg>
+                    </div>
+                    <h3 class="source-title">American Bar Association</h3>
+                    <p class="source-description">Templates based on ABA guidelines and best practices for legal documentation.</p>
+                </div>
+                <div class="source-card">
+                    <div class="source-icon">
+                        <svg width="48" height="48" viewBox="0 0 48 48" fill="none">
+                            <path d="M12 8H36V40H12V8Z" stroke="#7b68ee" stroke-width="2" fill="none"/>
+                            <path d="M16 16H32M16 24H32M16 32H28" stroke="#7b68ee" stroke-width="2"/>
+                        </svg>
+                    </div>
+                    <h3 class="source-title">State Legal Forms</h3>
+                    <p class="source-description">Official state forms and templates adapted for professional use.</p>
+                </div>
+                <div class="source-card">
+                    <div class="source-icon">
+                        <svg width="48" height="48" viewBox="0 0 48 48" fill="none">
+                            <circle cx="24" cy="24" r="16" stroke="#7b68ee" stroke-width="2" fill="none"/>
+                            <path d="M24 16V24L30 30" stroke="#7b68ee" stroke-width="2"/>
+                        </svg>
+                    </div>
+                    <h3 class="source-title">Legal Publishers</h3>
+                    <p class="source-description">Templates from established legal publishers and professional organizations.</p>
+                </div>
             </div>
         </div>
     </section>
@@ -187,96 +217,6 @@
             </div>
         </div>
     </section>
-
-    <!-- Document Creation Modal -->
-    <div class="modal" id="documentModal">
-        <div class="modal-overlay" id="modalOverlay"></div>
-        <div class="modal-content">
-            <div class="modal-header">
-                <h3 class="modal-title">Create Legal Document</h3>
-                <button class="modal-close" id="modalClose">
-                    <svg width="24" height="24" viewBox="0 0 24 24" fill="currentColor">
-                        <path d="M18 6L6 18M6 6L18 18"/>
-                    </svg>
-                </button>
-            </div>
-            <div class="modal-body">
-                <div class="document-wizard" id="documentWizard">
-                    <!-- Step 1: Document Selection -->
-                    <div class="wizard-step active" data-step="1">
-                        <h4 class="step-title">Select Document Type</h4>
-                        <div class="document-search">
-                            <input type="text" placeholder="Search document types..." class="search-input" id="documentSearch">
-                        </div>
-                        <div class="document-categories" id="documentCategories">
-                            <!-- Categories will be populated by JavaScript -->
-                        </div>
-                    </div>
-
-                    <!-- Step 2: Document Form -->
-                    <div class="wizard-step" data-step="2">
-                        <h4 class="step-title">Document Details</h4>
-                        <div class="progress-bar">
-                            <div class="progress-fill" id="progressFill"></div>
-                        </div>
-                        <form class="document-form" id="documentForm">
-                            <!-- Form fields will be populated by JavaScript -->
-                        </form>
-                    </div>
-
-                    <!-- Step 3: Customization -->
-                    <div class="wizard-step" data-step="3">
-                        <h4 class="step-title">Customize Your Document</h4>
-                        <div class="customization-options" id="customizationOptions">
-                            <!-- Options will be populated by JavaScript -->
-                        </div>
-                    </div>
-
-                    <!-- Step 4: Review & Generate -->
-                    <div class="wizard-step" data-step="4">
-                        <h4 class="step-title">Review & Generate</h4>
-                        <div class="document-preview-container">
-                            <div class="preview-document" id="previewDocument">
-                                <!-- Preview will be populated by JavaScript -->
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <div class="wizard-navigation">
-                    <button class="btn btn-outline" id="prevStep" style="display: none;">Previous</button>
-                    <button class="btn btn-primary" id="nextStep">Next</button>
-                    <button class="btn btn-success" id="generateDocument" style="display: none;">Generate Document</button>
-                </div>
-            </div>
-        </div>
-    </div>
-
-    <!-- Loading Overlay -->
-    <div class="loading-overlay" id="loadingOverlay">
-        <div class="loading-spinner">
-            <div class="spinner"></div>
-            <p class="loading-text">Generating your legal document...</p>
-        </div>
-    </div>
-
-    <!-- Success Modal -->
-    <div class="modal" id="successModal">
-        <div class="modal-overlay"></div>
-        <div class="modal-content success-modal">
-            <div class="success-icon">
-                <svg width="64" height="64" viewBox="0 0 64 64" fill="none">
-                    <circle cx="32" cy="32" r="28" stroke="#00f0ff" stroke-width="4" fill="none"/>
-                    <path d="M20 32L28 40L44 24" stroke="#00f0ff" stroke-width="4"/>
-                </svg>
-            </div>
-            <h3 class="success-title">Document Generated Successfully!</h3>
-            <p class="success-description">Your legal document has been created and is ready for download.</p>
-            <div class="success-actions">
-                <button class="btn btn-primary" id="downloadDocument">Download PDF</button>
-                <button class="btn btn-outline" id="downloadWord">Download Word</button>
-            </div>
-        </div>
-    </div>
 
     <!-- Footer -->
     <footer class="footer">

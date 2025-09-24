@@ -1,0 +1,280 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document Templates - LegalAlly</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="styles/main.css">
+    <link rel="stylesheet" href="styles/components.css">
+    <link rel="stylesheet" href="styles/animations.css">
+</head>
+<body>
+    <!-- Navigation -->
+    <nav class="navbar">
+        <div class="nav-container">
+            <div class="nav-brand">
+                <a href="index.html" class="brand-link">
+                    <div class="logo">
+                        <svg width="32" height="32" viewBox="0 0 32 32" fill="none">
+                            <path d="M16 2L28 8V24L16 30L4 24V8L16 2Z" stroke="#ffffff" stroke-width="2" fill="none"/>
+                            <path d="M12 14H20M12 18H20" stroke="#ffffff" stroke-width="2"/>
+                        </svg>
+                    </div>
+                    <span class="brand-text">LEGALALLY</span>
+                </a>
+            </div>
+            <div class="nav-menu">
+                <a href="index.html" class="nav-link">Home</a>
+                <a href="documents.html" class="nav-link active">Documents</a>
+                <a href="index.html#sources" class="nav-link">Template Sources</a>
+                <button class="btn btn-outline" id="loginBtn">Login</button>
+                <button class="btn btn-primary" id="signupBtn">Get Started</button>
+            </div>
+            <div class="mobile-menu-toggle" id="mobileMenuToggle">
+                <span></span>
+                <span></span>
+                <span></span>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Breadcrumb Navigation -->
+    <div class="breadcrumb">
+        <div class="container">
+            <nav class="breadcrumb-nav">
+                <a href="index.html" class="breadcrumb-link">Home</a>
+                <svg width="16" height="16" viewBox="0 0 16 16" fill="currentColor">
+                    <path d="M6 4L10 8L6 12"/>
+                </svg>
+                <span class="breadcrumb-current">Document Templates</span>
+            </nav>
+        </div>
+    </div>
+
+    <!-- Document Selection Page -->
+    <section class="documents-page">
+        <div class="container">
+            <div class="page-header">
+                <h1 class="page-title">Professional Legal Templates</h1>
+                <p class="page-description">Choose from our collection of professionally researched legal document templates, sourced from credible legal authorities and organizations.</p>
+                
+                <!-- Search Bar -->
+                <div class="search-container">
+                    <div class="search-input-wrapper">
+                        <svg class="search-icon" width="20" height="20" viewBox="0 0 20 20" fill="currentColor">
+                            <path fill-rule="evenodd" d="M9 3.5a5.5 5.5 0 100 11 5.5 5.5 0 000-11zM2 9a7 7 0 1112.452 4.391l3.328 3.329a.75.75 0 11-1.06 1.06l-3.329-3.328A7 7 0 012 9z" clip-rule="evenodd"/>
+                        </svg>
+                        <input type="text" class="search-input" id="documentSearch" placeholder="Search professional templates...">
+                        <div class="search-results" id="searchResults"></div>
+                    </div>
+                </div>
+
+                <!-- Filter Tabs -->
+                <div class="filter-tabs">
+                    <button class="filter-tab active" data-category="all">All Templates</button>
+                    <button class="filter-tab" data-category="personal">Personal & Household</button>
+                    <button class="filter-tab" data-category="business">Business & Freelance</button>
+                    <button class="filter-tab" data-category="digital">Website & Digital</button>
+                    <button class="filter-tab" data-category="employment">Employment & HR</button>
+                    <button class="filter-tab" data-category="real-estate">Real Estate</button>
+                </div>
+            </div>
+
+            <!-- Template Verification Badge -->
+            <div class="verification-banner">
+                <div class="verification-content">
+                    <svg width="24" height="24" viewBox="0 0 24 24" fill="currentColor">
+                        <path d="M9 12L11 14L15 10M21 12C21 16.9706 16.9706 21 12 21C7.02944 21 3 16.9706 3 12C3 7.02944 7.02944 3 12 3C16.9706 3 21 7.02944 21 12Z"/>
+                    </svg>
+                    <div class="verification-text">
+                        <h3>Professionally Researched Templates</h3>
+                        <p>All templates are sourced from credible legal authorities, government websites, and professional organizations</p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Document Categories Grid -->
+            <div class="categories-container" id="categoriesContainer">
+                <!-- Categories will be populated by JavaScript -->
+            </div>
+        </div>
+    </section>
+
+    <!-- Document Creation Modal -->
+    <div class="modal" id="documentModal">
+        <div class="modal-overlay" id="modalOverlay"></div>
+        <div class="modal-content">
+            <div class="modal-header">
+                <h3 class="modal-title">Create Professional Document</h3>
+                <button class="modal-close" id="modalClose">
+                    <svg width="24" height="24" viewBox="0 0 24 24" fill="currentColor">
+                        <path d="M18 6L6 18M6 6L18 18"/>
+                    </svg>
+                </button>
+            </div>
+            <div class="modal-body">
+                <div class="document-wizard" id="documentWizard">
+                    <!-- Step 1: Document Form -->
+                    <div class="wizard-step active" data-step="1">
+                        <h4 class="step-title">Document Details</h4>
+                        <div class="progress-bar">
+                            <div class="progress-fill" id="progressFill"></div>
+                        </div>
+                        <div class="template-source-info" id="templateSourceInfo">
+                            <!-- Template source information will be populated -->
+                        </div>
+                        <form class="document-form" id="documentForm">
+                            <!-- Form fields will be populated by JavaScript -->
+                        </form>
+                    </div>
+
+                    <!-- Step 2: Review & Generate -->
+                    <div class="wizard-step" data-step="2">
+                        <h4 class="step-title">Review & Generate</h4>
+                        <div class="document-preview-container">
+                            <div class="watermark-notice">
+                                <svg width="20" height="20" viewBox="0 0 20 20" fill="currentColor">
+                                    <path fill-rule="evenodd" d="M18 10a8 8 0 11-16 0 8 8 0 0116 0zm-7-4a1 1 0 11-2 0 1 1 0 012 0zM9 9a1 1 0 000 2v3a1 1 0 001 1h1a1 1 0 100-2v-3a1 1 0 00-1-1H9z" clip-rule="evenodd"/>
+                                </svg>
+                                <span>Preview includes watermark - Download clean document after payment</span>
+                            </div>
+                            <div class="preview-document" id="previewDocument">
+                                <!-- Preview will be populated by JavaScript -->
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Step 3: Payment -->
+                    <div class="wizard-step" data-step="3">
+                        <h4 class="step-title">Complete Purchase</h4>
+                        <div class="payment-container">
+                            <div class="payment-summary">
+                                <h5>Your Professionally-Templated Document is Ready!</h5>
+                                <div class="document-details">
+                                    <div class="detail-item">
+                                        <span class="detail-label">Document Type:</span>
+                                        <span class="detail-value" id="paymentDocumentType"></span>
+                                    </div>
+                                    <div class="detail-item">
+                                        <span class="detail-label">Template Source:</span>
+                                        <span class="detail-value" id="paymentTemplateSource"></span>
+                                    </div>
+                                    <div class="detail-item">
+                                        <span class="detail-label">Last Verified:</span>
+                                        <span class="detail-value" id="paymentLastVerified"></span>
+                                    </div>
+                                    <div class="detail-item price-item">
+                                        <span class="detail-label">Price:</span>
+                                        <span class="detail-value price">$9.99</span>
+                                    </div>
+                                </div>
+                            </div>
+                            <button class="btn btn-primary btn-large payment-btn" id="paymentBtn">
+                                <svg width="20" height="20" viewBox="0 0 20 20" fill="currentColor">
+                                    <path d="M4 4a2 2 0 00-2 2v1h16V6a2 2 0 00-2-2H4zM18 9H2v5a2 2 0 002 2h12a2 2 0 002-2V9zM4 13a1 1 0 011-1h1a1 1 0 110 2H5a1 1 0 01-1-1zm5-1a1 1 0 100 2h1a1 1 0 100-2H9z"/>
+                                </svg>
+                                <span>Pay to Download</span>
+                            </button>
+                            <p class="payment-notice">Secure payment powered by Stripe</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="wizard-navigation">
+                    <button class="btn btn-outline" id="prevStep" style="display: none;">Previous</button>
+                    <button class="btn btn-primary" id="nextStep">Next</button>
+                    <button class="btn btn-primary" id="generateDocument" style="display: none;">Review Document</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Loading Overlay -->
+    <div class="loading-overlay" id="loadingOverlay">
+        <div class="loading-spinner">
+            <div class="spinner"></div>
+            <p class="loading-text">Researching professional template...</p>
+        </div>
+    </div>
+
+    <!-- Success Modal -->
+    <div class="modal" id="successModal">
+        <div class="modal-overlay"></div>
+        <div class="modal-content success-modal">
+            <div class="success-icon">
+                <svg width="64" height="64" viewBox="0 0 64 64" fill="none">
+                    <circle cx="32" cy="32" r="28" stroke="#ffffff" stroke-width="4" fill="none"/>
+                    <path d="M20 32L28 40L44 24" stroke="#ffffff" stroke-width="4"/>
+                </svg>
+            </div>
+            <h3 class="success-title">Payment Successful!</h3>
+            <p class="success-description">Your professionally researched document is ready for download.</p>
+            <div class="success-actions">
+                <button class="btn btn-primary" id="downloadDocument">Download PDF</button>
+                <button class="btn btn-outline" id="downloadWord">Download Word</button>
+            </div>
+        </div>
+    </div>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-section">
+                    <div class="footer-brand">
+                        <div class="logo">
+                            <svg width="32" height="32" viewBox="0 0 32 32" fill="none">
+                                <path d="M16 2L28 8V24L16 30L4 24V8L16 2Z" stroke="#ffffff" stroke-width="2" fill="none"/>
+                                <path d="M12 14H20M12 18H20" stroke="#ffffff" stroke-width="2"/>
+                            </svg>
+                        </div>
+                        <span class="brand-text">LEGALALLY</span>
+                    </div>
+                    <p class="footer-description">Professional legal documents made simple and secure.</p>
+                </div>
+                <div class="footer-section">
+                    <h4 class="footer-title">Documents</h4>
+                    <ul class="footer-links">
+                        <li><a href="#">Business Contracts</a></li>
+                        <li><a href="#">Rental Agreements</a></li>
+                        <li><a href="#">Wills & Trusts</a></li>
+                        <li><a href="#">LLC Formation</a></li>
+                    </ul>
+                </div>
+                <div class="footer-section">
+                    <h4 class="footer-title">Support</h4>
+                    <ul class="footer-links">
+                        <li><a href="#">Help Center</a></li>
+                        <li><a href="#">Contact Us</a></li>
+                        <li><a href="#">Legal Advice</a></li>
+                        <li><a href="#">Status</a></li>
+                    </ul>
+                </div>
+                <div class="footer-section">
+                    <h4 class="footer-title">Legal</h4>
+                    <ul class="footer-links">
+                        <li><a href="#">Privacy Policy</a></li>
+                        <li><a href="#">Terms of Service</a></li>
+                        <li><a href="#">Disclaimer</a></li>
+                        <li><a href="#">Security</a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p class="footer-disclaimer">
+                    <strong>Legal Disclaimer:</strong> LegalAlly provides legal document templates and is not a substitute for legal advice. 
+                    Consult with a qualified attorney for complex legal matters.
+                </p>
+                <p class="footer-copyright">© 2024 LegalAlly. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="js/main.js"></script>
+    <script src="js/document-generator.js"></script>
+    <script src="js/wizard.js"></script>
+    <script src="js/documents-page.js"></script>
+</body>
+</html>
